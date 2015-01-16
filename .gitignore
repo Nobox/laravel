@@ -3,6 +3,9 @@
 Homestead.yaml
 Homestead.json
 .env
+
+bower_components
 node_modules
+
 *.sublime-project
 *.sublime-workspace
