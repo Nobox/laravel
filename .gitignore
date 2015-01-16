@@ -1,11 +1,18 @@
+# OS
+.DS_Store
+
+# Laravel
 /vendor
 /node_modules
 Homestead.yaml
 Homestead.json
 .env
+composer.lock
 
-bower_components
-node_modules
-
+# Sublime Text
 *.sublime-project
 *.sublime-workspace
+
+# Bower and npm
+bower_components
+node_modules
