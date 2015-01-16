@@ -1,16 +1,16 @@
 <?php
 
 /*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
+ |-----------------------------------------------------------------------------
+ | App Routes
+ |-----------------------------------------------------------------------------
+ |
+ | For better organization, routes are divided and organized as separate files
+ | in the the app/Routes folder. Define the application routes there.
+ | This file does not have to be modified.
+ |
+ */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+foreach (File::allFiles(__DIR__ . '/Routes') as $routeFile) {
+    require_once $routeFile->getPathname();
+}
