@@ -1,0 +1,12 @@
+{
+  "name": "nobox",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "scut": "~1.0.2"
+  },
+  "dependencies": {
+    "beanie": "Nobox/beanie",
+    "jquery": "2.1.3"
+  }
+}
