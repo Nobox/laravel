@@ -7,7 +7,9 @@ require('laravel-elixir-svg-symbols');
 
 elixir(function(mix) {
     mix
-        .sass('styles.scss')
+        .sass('**/*.scss', null, {
+            includePaths: [elixir.config.bowerDir]
+        })
 
         .browserify('app.js', 'public/js', {
             transform: [to5ify]
