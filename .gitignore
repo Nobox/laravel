@@ -8,6 +8,10 @@ Homestead.yaml
 Homestead.json
 .env
 composer.lock
+public/css/*.css
+public/js/*.js
+public/img/*
+public/svg/*.svg
 
 # Sublime Text
 *.sublime-project
