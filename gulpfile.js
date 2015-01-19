@@ -23,8 +23,6 @@ elixir(function(mix) {
         .version('js/app.js')
         .version('img/*.{png, jpg, jpeg}')
 
-        .routes()
-        .events()
         .phpUnit()
     ;
 });
