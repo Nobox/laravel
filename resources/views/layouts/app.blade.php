@@ -11,22 +11,8 @@
     @else
     <script src="{{ asset('bower_components/modernizr/modernizr.js') }}"></script>
     @endif
-@stop
 
-@section('body-content')
-    @if(file_exists(public_path() . '/svg/symbols.svg'))
-        <?php include(public_path() . '/svg/symbols.svg'); ?>
-    @endif
-
-    @yield('content')
-@stop
-
-@section('scripts-body')
-    <!-- jQuery -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="bower_components/jquery/dist/jquery.min.js"><\/script>')</script>
-
-    <!-- Google Analytics -->
+    {{-- Google Analytics --}}
     <script>
     @if (empty(getenv('GA_TRACKING_ID')) || getenv('GA_TRACKING_ID') == 'UA-XXXXX-X')
         console.warn('Remember to set a valid Google Analytics property tracking ID for this app.');
@@ -39,6 +25,25 @@
         ga('create', '{{ getenv('GA_TRACKING_ID') }}', 'auto');ga('send','pageview');
     @endif
     </script>
+@stop
+
+@section('body-open')
+    @parent
+    @if(file_exists(public_path() . '/svg/symbols.svg'))
+        <?php include(public_path() . '/svg/symbols.svg'); ?>
+    @endif
+@stop
+
+@section('body-content')
+    <main role="main">
+        @yield('content')
+    </main>
+@stop
+
+@section('scripts-body')
+    <!-- jQuery -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="bower_components/jquery/dist/jquery.min.js"><\/script>')</script>
 
     <script src="{{ elixir('js/app.js') }}"></script>
 @stop
