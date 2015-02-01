@@ -4,6 +4,7 @@ var elixir = require('laravel-elixir'),
 
 require('laravel-elixir-browserify');
 require('laravel-elixir-svg-symbols');
+require('laravel-elixir-imagemin');
 
 elixir(function(mix) {
     mix
@@ -26,6 +27,8 @@ elixir(function(mix) {
         .version('css/styles.css')
         .version('js/app.js')
         .version('img/*.{png, jpg, jpeg}')
+        .imagemin()
+
 
         .phpUnit()
     ;
