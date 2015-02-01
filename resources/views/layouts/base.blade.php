@@ -20,6 +20,11 @@
     @section('scripts-head')
         {{-- Scripts required afap --}}
 
+        <!--[if lte IE 9]>
+        <script src="{{ asset('bower_components/matchmedia/matchMedia.js') }}"></script>
+        <script src="{{ asset('bower_components/matchmedia/matchMedia.addListener.js') }}"></script>
+        <![endif]-->
+
         {{-- Modernizr --}}
         @if ($app->environment('production'))
         <script src="{{ asset('js/vendor/modernizr.js') }}"></script>
