@@ -20,3 +20,6 @@ public/svg/*.svg
 # Bower and npm
 bower_components
 node_modules
+
+# Gulp
+build
