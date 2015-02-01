@@ -11,8 +11,10 @@ elixir(function(mix) {
             includePaths: [elixir.config.bowerDir]
         })
 
-        .browserify('app.js', 'public/js', {
-            transform: [to5ify]
+        .browserify('bootstrap.js', {
+            debug: true,
+            transform: [to5ify],
+            rename: 'app.js'
         })
 
         .svgSymbols({
