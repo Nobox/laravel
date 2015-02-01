@@ -6,7 +6,7 @@
 
 @section('scripts-head')
     {{-- Modernizr --}}
-    @if ('production' == $environment)
+    @if ($app->environment('production'))
     <script src="{{ asset('js/vendor/modernizr.js') }}"></script>
     @else
     <script src="{{ asset('bower_components/modernizr/modernizr.js') }}"></script>
@@ -35,9 +35,7 @@
 @stop
 
 @section('body-content')
-    <main role="main">
-        @yield('content')
-    </main>
+    @yield('content')
 @stop
 
 @section('scripts-body')
