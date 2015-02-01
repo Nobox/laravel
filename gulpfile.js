@@ -1,3 +1,5 @@
+'use strict';
+
 var elixir = require('laravel-elixir'),
     to5ify = require('6to5ify')
 ;
@@ -24,11 +26,13 @@ elixir(function(mix) {
             templates: ['default-svg']
         })
 
-        .version('css/styles.css')
-        .version('js/app.js')
-        .version('img/*.{png, jpg, jpeg}')
         .imagemin()
 
+        .version([
+            'css/styles.css',
+            'js/app.js',
+            'img/*'
+        ])
 
         .phpUnit()
     ;
