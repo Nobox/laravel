@@ -12,6 +12,9 @@
   // Define globals exposed by Node.js.
   "node": true,
 
+  // We write in ECMAScript 6 syntax.
+  "esnext": true,
+
   /**
    * ENFORCING OPTIONS
    */
