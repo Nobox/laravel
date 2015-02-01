@@ -3,7 +3,7 @@
   "license": "MIT",
   "private": true,
   "devDependencies": {
-    "scut": "~1.0.2"
+    "modernizr": "~2.8.3"
   },
   "dependencies": {
     "beanie": "Nobox/beanie",

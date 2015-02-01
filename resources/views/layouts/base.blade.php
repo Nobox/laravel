@@ -19,6 +19,13 @@
 
     @section('scripts-head')
         {{-- Scripts required afap --}}
+
+        {{-- Modernizr --}}
+        @if ($app->environment('production'))
+        <script src="{{ asset('js/vendor/modernizr.js') }}"></script>
+        @else
+        <script src="{{ asset('bower_components/modernizr/modernizr.js') }}"></script>
+        @endif
     @show
 </head>
 
