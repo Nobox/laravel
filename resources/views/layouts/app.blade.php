@@ -5,12 +5,7 @@
 @stop
 
 @section('scripts-head')
-    {{-- Modernizr --}}
-    @if ($app->environment('production'))
-    <script src="{{ asset('js/vendor/modernizr.js') }}"></script>
-    @else
-    <script src="{{ asset('bower_components/modernizr/modernizr.js') }}"></script>
-    @endif
+    @parent
 
     {{-- Google Analytics --}}
     <script>
