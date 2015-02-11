@@ -12,5 +12,5 @@
  */
 
 foreach (File::allFiles(__DIR__ . '/Routes') as $routeFile) {
-    require_once $routeFile->getPathname();
+    require $routeFile->getPathname();
 }
