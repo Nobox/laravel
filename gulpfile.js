@@ -1,7 +1,7 @@
 'use strict';
 
 var elixir = require('laravel-elixir'),
-    to5ify = require('6to5ify')
+    babelify = require('babelify')
 ;
 
 require('laravel-elixir-browserify');
@@ -16,7 +16,7 @@ elixir(function(mix) {
 
         .browserify('bootstrap.js', {
             debug: true,
-            transform: [to5ify],
+            transform: [babelify],
             rename: 'app.js'
         })
 
