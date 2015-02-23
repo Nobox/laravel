@@ -13,6 +13,12 @@ public/js/*.js
 public/img/*
 public/svg/*.svg
 
+# Lazy Strings
+/resources/lang/en/app.php
+/resources/lang/es/app.php
+/resources/lang/pt/app.php
+/storage/lazy-strings/*.json
+
 # Sublime Text
 *.sublime-project
 *.sublime-workspace
