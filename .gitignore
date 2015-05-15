@@ -12,10 +12,11 @@ Homestead.json
 bower_components
 
 # Compiled
-/public/css/*.css
-/public/js/*.js
-/public/img/*
-/public/svg/*.svg
+*.map
+/public/css/**/*.css
+/public/js/**/*.js
+/public/svg/**/*.svg
+/public/img
 /public/build
 
 # Lazy Strings
