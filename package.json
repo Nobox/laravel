@@ -1,5 +1,8 @@
 {
   "private": true,
+  "browserify": {
+    "transform": ["babelify"]
+  },
   "devDependencies": {
     "gulp": "^3.8.8"
   },

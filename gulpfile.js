@@ -1,23 +1,18 @@
-'use strict';
-
-var elixir = require('laravel-elixir'),
-    babelify = require('babelify')
-;
-
-require('laravel-elixir-browserify');
+var elixir = require('laravel-elixir');
+require('laravel-elixir-browserify').init('bundler');
 require('laravel-elixir-svg-symbols');
 require('laravel-elixir-imagemin');
 
 elixir(function(mix) {
     mix
         .sass('**/*.scss', null, {
-            includePaths: [elixir.config.bowerDir]
+            includePaths: ['./node_modules', elixir.config.bowerDir]
         })
 
-        .browserify('bootstrap.js', {
+        .bundler('entry.js', {
             debug: true,
-            transform: [babelify],
-            rename: 'app.js'
+            transform: ['babelify'],
+            rename: 'bundle.js'
         })
 
         .svgSymbols({
@@ -30,8 +25,7 @@ elixir(function(mix) {
 
         .version([
             'css/styles.css',
-            'js/app.js',
-            'img/*'
+            'js/bundle.js'
         ])
 
         .phpUnit()

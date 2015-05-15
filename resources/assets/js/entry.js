@@ -1,5 +1,3 @@
-'use strict';
-
 // Plugins
 var attachFastClick = require('fastclick');
 
