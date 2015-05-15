@@ -1,7 +1,13 @@
 {
   "private": true,
   "browserify": {
-    "transform": ["babelify"]
+    "transform": [
+      "babelify",
+      "browserify-shim"
+    ]
+  },
+  "browserify-shim": {
+    "jquery": "global:jQuery"
   },
   "devDependencies": {
     "gulp": "^3.8.8"

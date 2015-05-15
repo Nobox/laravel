@@ -11,7 +11,6 @@ elixir(function(mix) {
 
         .bundler('entry.js', {
             debug: true,
-            transform: ['babelify'],
             rename: 'bundle.js'
         })
 
