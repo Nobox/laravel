@@ -35,7 +35,7 @@
 
 @section('scripts-body')
     <!-- jQuery -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="{{ asset("bower_components/jquery/dist/jquery.min.js") }}"><\/script>')</script>
     <script src="{{ elixir('js/bundle.js') }}"></script>
 @stop
