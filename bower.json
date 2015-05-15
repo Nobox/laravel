@@ -1,6 +1,5 @@
 {
-  "name": "nobox",
-  "license": "MIT",
+  "name": "nobox/laravel",
   "private": true,
   "devDependencies": {
     "modernizr": "~2.8.3"
@@ -9,5 +8,8 @@
     "beanie": "Nobox/beanie",
     "jquery": "~2.1.4",
     "matchmedia": "~0.2.0"
+  },
+  "resolutions": {
+    "inuit-spacing": "~0.7.0"
   }
 }
