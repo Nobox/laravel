@@ -22,13 +22,6 @@
     </script>
 @stop
 
-@section('body-open')
-    @parent
-    @if(file_exists(public_path() . '/svg/symbols.svg'))
-        <?php include(public_path() . '/svg/symbols.svg'); ?>
-    @endif
-@stop
-
 @section('body-content')
     @yield('content')
 @stop
