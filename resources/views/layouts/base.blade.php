@@ -18,8 +18,12 @@
     @show
 
     @section('scripts-head')
-        {{-- Scripts required afap --}}
+        {{-- External SVG spritesheet file polyfill --}}
+        <!--[if IE]>
+        <script src="{{ asset('bower_components/svg4everybody/svg4everybody.min.js') }}"></script>
+        <![endif]-->
 
+        {{-- window.matchMedia polyfill --}}
         <!--[if lte IE 9]>
         <script src="{{ asset('bower_components/matchmedia/matchMedia.js') }}"></script>
         <script src="{{ asset('bower_components/matchmedia/matchMedia.addListener.js') }}"></script>
