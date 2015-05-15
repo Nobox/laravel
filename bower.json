@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "beanie": "Nobox/beanie",
-    "jquery": "2.1.3",
+    "jquery": "~2.1.4",
     "matchmedia": "~0.2.0"
   }
 }
