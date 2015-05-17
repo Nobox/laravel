@@ -2,7 +2,7 @@
   "private": true,
   "browserify": {
     "transform": [
-      "babelify",
+      ["babelify", { "stage": 0 }],
       "browserify-shim"
     ]
   },
