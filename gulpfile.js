@@ -1,7 +1,7 @@
 var elixir = require('laravel-elixir');
 require('laravel-elixir-browserify').init('bundler');
-require('laravel-elixir-svg-symbols');
 require('laravel-elixir-imagemin');
+require('./elixir-extensions/svg-sprite');
 
 elixir(function(mix) {
     mix
@@ -14,13 +14,9 @@ elixir(function(mix) {
             rename: 'bundle.js'
         })
 
-        .svgSymbols({
-            outputDir: 'public/svg',
-            rename: 'symbols',
-            templates: ['default-svg']
-        })
-
         .imagemin()
+
+        .svgSprite()
 
         .version([
             'css/styles.css',
