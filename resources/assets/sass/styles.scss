@@ -1,39 +1,49 @@
-/*------------------------------------*\
-    #APP STYLES
-\*------------------------------------*/
-
 /**
  * CONTENTS
  *
- * UTILITIES
- * Scut.................SASS utilities
- *
  * SETTINGS
- * Beanie...............Beanie overrides
- *
- * FRAMEWORKS
- * Beanie...............In-house framework for rapid app styling.
+ * Default..............inuitcss’ default settings.
+ * Responsive...........Set up and name our breakpoints.
  *
  * TOOLS
- * Aliases..............Shorter variables for easier reuse.
+ * Functions............inuitcss’ default functions.
+ * Mixins...............inuitcss’ default mixins.
+ * Widths...............inuitcss’ width classes generator.
+ * Responsive...........Responsive tooling (requires responsive settings).
+ * Aliases..............Shorter aliases for important values.
+ *
+ * GENERIC
+ * Reset................A pared back reset to remove margins.
+ * Normalize............A level playing field.
+ * Box-sizing...........Better default `box-sizing`.
+ * Shared...............High-level styling across shared rulesets.
  *
  * BASE
- * ...
+ * Page.................Base page-level styling.
+ * Lists................Simple list styles.
+ * Images...............Simple image styles.
  *
  * OBJECTS
- * ...
- *
- * COMPONENTS
- * ...
+ * Font-size............Consistent font sizes.
+ * Buttons..............Simple, extensible button objects.
+ * Layout...............inuitcss’ answer to the traditional grid system.
+ * Layout-responsive....Custom responsive modifiers for layout object.
+ * Media................@stubbornella’s media object.
+ * Flag.................The flag object.
+ * Box..................Simple object to make boxed-off content.
+ * Block................Stack an image above some text content.
+ * Bare list............A simple object to remove bullets and indents from lists.
+ * Inline list..........Align list items side by side.
  *
  * TRUMPS
- * ...
+ * Clearfix.............I can’t believe we still need this in 2014.
+ * Widths...............Inuit widths helpers.
+ * Widths-responsive....Width helpers based on defined breakpoints.
+ * Spacing..............Micro-level spacing helpers.
+ * Spacing-resposnive.. Responsive versions of spacing helpers.
+ * Inline...............Inline alignment helpers.
+ * Visibility...........Visibility helpers to hide content responsively.
  */
-
-/**
- * #UTILITIES
- */
-@import "scut/dist/scut";
 
 
 
@@ -42,16 +52,8 @@
 /**
  * #SETTINGS
  */
-//@import "settings.beanie";
-
-
-
-
-
-/**
- * #FRAMEWORKS
- */
-@import "beanie/beanie";
+@import "inuit-defaults/settings.defaults";
+@import "inuit-responsive-settings/settings.responsive";
 
 
 
@@ -60,7 +62,24 @@
 /**
  * #TOOLS
  */
-@import "tools.aliases";
+@import "scut/dist/scut";
+@import "inuit-functions/tools.functions";
+@import "inuit-mixins/tools.mixins";
+@import "inuit-tools-widths/tools.widths";
+@import "inuit-responsive-tools/tools.responsive";
+@import "beanie/tools.aliases";
+
+
+
+
+
+/**
+ * #GENERIC
+ */
+@import "inuit-reset/generic.reset";
+@import "inuit-normalize/generic.normalize";
+@import "inuit-shared/generic.shared";
+@import "inuit-box-sizing/generic.box-sizing";
 
 
 
@@ -69,6 +88,9 @@
 /**
  * #BASE
  */
+@import "inuit-page/base.page";
+@import "inuit-lists/base.lists";
+@import "inuit-images/base.images";
 
 
 
@@ -77,14 +99,16 @@
 /**
  * #OBJECTS
  */
-
-
-
-
-
-/**
- * #COMPONENTS
- */
+@import "beanie/objects.font-size";
+@import "inuit-buttons/objects.buttons";
+@import "inuit-layout/objects.layout";
+@import "beanie/objects.layout-responsive";
+@import "inuit-media/objects.media";
+@import "inuit-flag/objects.flag";
+@import "inuit-box/objects.box";
+@import "inuit-block/objects.block";
+@import "inuit-list-bare/objects.list-bare";
+@import "inuit-list-inline/objects.list-inline";
 
 
 
@@ -93,3 +117,10 @@
 /**
  * #TRUMPS
  */
+@import "inuit-clearfix/trumps.clearfix";
+@import "inuit-widths/trumps.widths";
+@import "inuit-widths-responsive/trumps.widths-responsive";
+@import "inuit-spacing/trumps.spacing";
+@import "inuit-spacing-responsive/trumps.spacing-responsive";
+@import "beanie/trumps.inline-align";
+@import "beanie/trumps.visibility";
