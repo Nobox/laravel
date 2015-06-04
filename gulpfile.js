@@ -10,7 +10,6 @@ elixir(function(mix) {
         })
 
         .bundler('entry.js', {
-            debug: true,
             rename: 'bundle.js'
         })
 
