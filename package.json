@@ -1,13 +1,14 @@
 {
-  "private": true,
   "browserify": {
     "transform": [
-      ["babelify", { "stage": 0 }],
       "browserify-shim"
     ]
   },
   "browserify-shim": {
     "jquery": "global:jQuery"
+  },
+  "dependencies": {
+    "fastclick": "^1.0.6"
   },
   "devDependencies": {
     "gulp": "^3.8.8"
@@ -15,5 +16,6 @@
   "dependencies": {
     "laravel-elixir": "^4.0.0",
     "bootstrap-sass": "^3.0.0"
-  }
+  },
+  "private": true
 }
