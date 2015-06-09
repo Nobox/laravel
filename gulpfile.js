@@ -1,17 +1,14 @@
 var elixir = require('laravel-elixir');
-require('laravel-elixir-browserify').init('bundler');
 require('laravel-elixir-imagemin');
 require('./elixir-extensions/svg-sprite');
 
 elixir(function(mix) {
     mix
-        .sass('**/*.scss', null, {
+        .sass('styles.scss', elixir.config.cssOutput + '/styles.css', {
             includePaths: ['./node_modules', elixir.config.bowerDir]
         })
 
-        .bundler('entry.js', {
-            rename: 'bundle.js'
-        })
+        .browserify('entry.js', elixir.config.jsOutput + '/poop.js')
 
         .imagemin()
 
