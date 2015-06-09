@@ -8,7 +8,7 @@ elixir(function(mix) {
             includePaths: ['./node_modules', elixir.config.bowerDir]
         })
 
-        .browserify('entry.js', elixir.config.jsOutput + '/poop.js')
+        .browserify('entry.js', elixir.config.jsOutput + '/bundle.js')
 
         .imagemin()
 
