@@ -5,7 +5,7 @@
 /vendor
 /node_modules
 Homestead.yaml
-Homestead.json
+.vagrant
 .env
 
 # Bower
