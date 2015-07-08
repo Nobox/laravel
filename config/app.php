@@ -149,6 +149,7 @@ return [
          * Packages
          */
         Barryvdh\Debugbar\ServiceProvider::class,
+        GrahamCampbell\HTMLMin\HTMLMinServiceProvider::class,
 
     ],
 
@@ -202,7 +203,7 @@ return [
          * Packages
          */
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
-
+        'HTMLMin'  => GrahamCampbell\HTMLMin\Facades\HTMLMin::class
     ],
 
 ];
