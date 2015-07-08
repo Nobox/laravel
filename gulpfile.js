@@ -2,6 +2,12 @@ var elixir = require('laravel-elixir');
 require('laravel-elixir-imagemin');
 require('./elixir-extensions/svg-sprite');
 
+// Configure autoprefixer
+elixir.config.autoprefixerOptions = [{
+    browsers: ['last 2 versions', 'ie 9'],
+    cascade: false
+}];
+
 elixir(function(mix) {
     mix
         .sass('styles.scss', elixir.config.cssOutput + '/styles.css', {
