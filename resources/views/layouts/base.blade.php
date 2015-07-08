@@ -28,13 +28,6 @@
         <script src="{{ asset('bower_components/matchmedia/matchMedia.js') }}"></script>
         <script src="{{ asset('bower_components/matchmedia/matchMedia.addListener.js') }}"></script>
         <![endif]-->
-
-        {{-- Modernizr --}}
-        @if ($app->environment('production'))
-        <script src="{{ asset('js/vendor/modernizr.js') }}"></script>
-        @else
-        <script src="{{ asset('bower_components/modernizr/modernizr.js') }}"></script>
-        @endif
     @show
 </head>
 

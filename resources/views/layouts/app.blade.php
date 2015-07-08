@@ -27,6 +27,15 @@
 @stop
 
 @section('scripts-body')
+    @parent
+
+    {{-- Modernizr --}}
+    @if ($app->environment('local'))
+    <script src="{{ asset('bower_components/modernizr/modernizr.js') }}"></script>
+    @else
+    <script src="{{ asset('js/vendor/modernizr.js') }}"></script>
+    @endif
+
     <!-- jQuery -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="{{ asset("bower_components/jquery/dist/jquery.min.js") }}"><\/script>')</script>
