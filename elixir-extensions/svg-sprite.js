@@ -1,41 +1,49 @@
 var gulp          = require('gulp'),
-    svgSprite     = require('gulp-svg-sprite'),
-    elixir        = require('laravel-elixir'),
-    Notification  = require('laravel-elixir/ingredients/commands/Notification'),
-    utilities     = require('laravel-elixir/ingredients/commands/Utilities'),
-    _             = require('underscore')
+    svgSprite     = require('gulp-svg-sprite')
 ;
 
-elixir.extend('svgSprite', function(options) {
-    var config = this,
-        defaultOptions = {
-            dest: 'public',
-            srcDir: config.assetsDir + 'svg',
+var Elixir = require('laravel-elixir'),
+    Task   = Elixir.Task,
+    config = Elixir.config
+;
+
+/*
+ |----------------------------------------------------------------
+ | SVG Sprite
+ |----------------------------------------------------------------
+ |
+ | This task passes individual SVG files
+ | through svg-sprite.
+ |
+ | @see https://github.com/jkphl/svg-sprite
+ */
+
+Elixir.extend('svgSprite', function(baseDir, output, options) {
+    var options = options || {
             mode: {
                 symbol: {
                     dest: '.'
                 }
             }
-        }
+        },
+        paths = new Elixir.GulpPaths()
+            .src('**/*.svg', baseDir || config.assetsPath + '/svg')
+            .output(output || config.publicPath)
     ;
 
-    options = _.extend(defaultOptions, options);
+    new Task('svgSprite', function() {
+        this.log(paths.src, paths.output);
 
-    var onError = function(e) {
-        new Notification().error(e, 'SVG sprite sheet creation failed');
-
-        this.emit('end');
-    };
-
-    gulp.task('svgSprite', function() {
-        return gulp.src(config.assetsDir + '/**/*.svg')
+        return gulp.src(paths.src.path)
             .pipe(svgSprite(options))
-            .on('error', onError)
-            .pipe(gulp.dest(options.dest))
-            .pipe(new Notification().message('SVG sprite sheet created'));
-    });
+            .on('error', function(e) {
+                new Elixir.Notification().error(e, 'SVG sprites creation failed');
 
-    this.registerWatcher('svgSprite', options.srcDir + '/**/*.svg');
-
-    return this.queueTask('svgSprite');
+                this.emit('end');
+            })
+            .pipe(gulp.dest(paths.output.baseDir))
+            .pipe(new Elixir.Notification('SVG sprites generated'))
+    })
+    .watch(paths.src.path)
+    .ignore(paths.output.baseDir);
 });
