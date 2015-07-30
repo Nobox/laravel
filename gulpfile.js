@@ -2,6 +2,7 @@ var Elixir = require('laravel-elixir'),
     config = Elixir.config
 ;
 require('./elixir-extensions/imagemin');
+require('./elixir-extensions/spritesmith');
 require('./elixir-extensions/svg-sprite');
 require('./elixir-extensions/modernizr');
 
@@ -17,6 +18,8 @@ config.js.browserify.watchify.options.poll = true;
 // Mix
 Elixir(function(mix) {
     mix
+        .spritesmith()
+
         .sass('styles.scss', null, {
             includePaths: ['./node_modules', config.bowerDir]
         })
