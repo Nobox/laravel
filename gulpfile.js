@@ -1,6 +1,7 @@
 var Elixir = require('laravel-elixir'),
     config = Elixir.config
 ;
+require('./elixir-extensions/imagemin');
 require('./elixir-extensions/svg-sprite');
 require('./elixir-extensions/modernizr');
 
@@ -21,6 +22,8 @@ Elixir(function(mix) {
         })
 
         .browserify('entry.js', config.get('public.js.outputFolder') + '/bundle.js')
+
+        .imagemin()
 
         .svgSprite()
 
