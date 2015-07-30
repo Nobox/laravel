@@ -19,6 +19,10 @@ bower_components
 /public/img
 /public/build
 
+# Sprites
+/resources/assets/img/sprite.png
+/resources/assets/img/sprite-2x.png
+
 # Lazy Strings
 /resources/lang/*/app.php
 /storage/lazy-strings/*.json
