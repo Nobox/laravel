@@ -12,6 +12,17 @@ config.css.autoprefix.options = [{
     cascade: false
 }];
 
+// Enable more experimental Babel features
+config.js.browserify.transformers = [
+    {
+        name: 'babelify',
+        options: {
+            stage: 0,
+            compact: false
+        }
+    }
+];
+
 // Enable watchify polling for our NFS-mounted VMs.
 config.js.browserify.watchify.options.poll = true;
 
