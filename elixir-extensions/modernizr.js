@@ -1,21 +1,27 @@
-var gulp = require('gulp'),
-    elixir = require('laravel-elixir'),
-    config = elixir.config,
-    uglify = require('gulp-uglify'),
+var gulp      = require('gulp'),
     modernizr = require('gulp-modernizr')
 ;
 
-elixir.extend('modernizr', function(options) {
-    gulp.task('modernizr', function() {
-        gulp.src([
-                config.jsOutput + '/**/*.js',
-                '!' + config.jsOutput + '/modernizr-custom.js',
-                config.cssOutput + '/**/*.css'
-            ])
-            .pipe(modernizr('modernizr-custom.js', options))
-            .pipe(uglify())
-            .pipe(gulp.dest(config.jsOutput + '/vendor'))
-    });
+var Elixir = require('laravel-elixir')
+      Task = Elixir.Task,
+         $ = Elixir.Plugins,
+    config = Elixir.config
+;
 
-    return this.queueTask('modernizr');
+Elixir.extend('modernizr', function(src, output, options) {
+    var paths = {
+        src: src || [
+            config.get('public.js.outputFolder') + '/**/*.js',
+            '!' + config.get('public.js.outputFolder') + '/vendor/modernizr-custom.js',
+            config.get('public.css.outputFolder') + '/**/*.css'
+        ],
+        output: output || config.get('public.js.outputFolder') + '/vendor'
+    };
+
+    new Task('modernizr', function() {
+        return gulp.src(paths.src)
+            .pipe(modernizr('modernizr-custom.js', options || {}))
+            .pipe($.if(config.production, $.uglify()))
+            .pipe(gulp.dest(paths.output));
+    });
 });
