@@ -23,12 +23,7 @@
     @show
 
     @section('scripts-head')
-
-        {{-- window.matchMedia polyfill --}}
-        <!--[if lte IE 9]>
-        <script src="{{ asset('bower_components/matchmedia/matchMedia.js') }}"></script>
-        <script src="{{ asset('bower_components/matchmedia/matchMedia.addListener.js') }}"></script>
-        <![endif]-->
+        {{-- Scripts needed afap --}}
     @show
 </head>
 
@@ -39,7 +34,7 @@
     @yield('body-content')
 
     @section('scripts-body')
-        {{-- Scripts are loaded last --}}
+        {{-- Scripts should be loaded last --}}
     @show
 
 </body>
