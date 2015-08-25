@@ -23,10 +23,6 @@
     @show
 
     @section('scripts-head')
-        {{-- External SVG spritesheet file polyfill --}}
-        <!--[if IE]>
-        <script src="{{ asset('bower_components/svg4everybody/svg4everybody.min.js') }}"></script>
-        <![endif]-->
 
         {{-- window.matchMedia polyfill --}}
         <!--[if lte IE 9]>
