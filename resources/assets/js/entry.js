@@ -1,3 +1,4 @@
+import $ from 'jquery';
 import attachFastClick from 'fastclick';
 import svg4everybody from 'svg4everybody';
 import loadJS from './lib/loadJS';
@@ -12,5 +13,12 @@ svg4everybody();
 if (window.matchMedia === undefined) {
     loadJS('bower_components/matchmedia/matchMedia.js', function() {
         loadJS('bower_components/matchmedia/matchMedia.addListener.js');
+    });
+}
+
+// HTML5 input placeholder polyfill
+if (! Modernizr.placeholder) {
+    loadJS('bower_components/jquery-placeholder/jquery.placeholder.min.js', function() {
+        $('input, textarea').placeholder();
     });
 }
