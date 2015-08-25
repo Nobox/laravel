@@ -8,6 +8,7 @@
     "beanie": "Nobox/beanie",
     "jquery": "~2.1.4",
     "matchmedia": "~0.2.0"
+    "jquery-placeholder": "~2.1.2"
   },
   "resolutions": {
     "inuit-spacing": "~0.7.0"
