@@ -5,7 +5,8 @@
     ]
   },
   "browserify-shim": {
-    "jquery": "global:jQuery"
+    "jquery": "global:jQuery",
+    "mediacheck": "global:mediaCheck"
   },
   "dependencies": {
     "fastclick": "^1.0.6",
