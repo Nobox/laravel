@@ -7,6 +7,12 @@
 @section('scripts-head')
     @parent
 
+    {{-- Create picture element until the polyfill loads
+         https://scottjehl.github.io/picturefill/#getting-started --}}
+    <script>
+        document.createElement('picture');
+    </script>
+
     {{-- Google Analytics --}}
     <script>
         (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
