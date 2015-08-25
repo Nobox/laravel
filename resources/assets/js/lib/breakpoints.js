@@ -10,4 +10,4 @@ var breakpoints = {
     desk: 'screen and (min-width: 1024px)'
 }
 
-exports default breakpoints;
+export default breakpoints;
