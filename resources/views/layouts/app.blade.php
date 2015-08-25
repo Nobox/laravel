@@ -30,14 +30,17 @@
     @parent
 
     {{-- Modernizr --}}
-    @if ($app->environment('local'))
-    <script src="{{ asset('bower_components/modernizr/modernizr.js') }}"></script>
+    @if (file_exists(public_path('js/vendor/modernizr-custom.js')))
+        <script src="{{ asset('js/vendor/modernizr-custom.js') }}"></script>
     @else
-    <script src="{{ asset('js/vendor/modernizr.js') }}"></script>
+        <script src="{{ asset('bower_components/modernizr/modernizr.js') }}"></script>
+        <script>console.warn('Warning: Using the bloated development version of Modernizr. Use a custom build.');</script>
     @endif
 
-    <!-- jQuery -->
+    {{-- jQuery --}}
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="{{ asset("bower_components/jquery/dist/jquery.min.js") }}"><\/script>')</script>
+
+    {{-- Application --}}
     <script src="{{ elixir('js/bundle.js') }}"></script>
 @stop
