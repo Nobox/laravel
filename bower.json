@@ -9,6 +9,7 @@
     "jquery": "~2.1.4",
     "matchmedia": "~0.2.0",
     "jquery-placeholder": "~2.1.2",
+    "mediaCheck": "~0.4.6",
     "picturefill": "~2.3.1"
   },
   "resolutions": {
