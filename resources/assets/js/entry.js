@@ -22,3 +22,8 @@ if (! Modernizr.placeholder) {
         $('input, textarea').placeholder();
     });
 }
+
+// HTML5 <picture>, srcset and sizes polyfill
+if (! Modernizr.srcset || ! Modernizr.sizes) {
+    loadJS('bower_components/picturefill/dist/picturefill.min.js');
+}
