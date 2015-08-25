@@ -8,7 +8,8 @@
     "jquery": "global:jQuery"
   },
   "dependencies": {
-    "fastclick": "^1.0.6"
+    "fastclick": "^1.0.6",
+    "svg4everybody": "^2.0.0"
   },
   "devDependencies": {
     "gulp": "^3.8.8"
