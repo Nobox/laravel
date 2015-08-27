@@ -1,10 +1,10 @@
 var Elixir = require('laravel-elixir'),
     config = Elixir.config
 ;
+require('laravel-elixir-modernizr');
 require('./elixir-extensions/imagemin');
 require('./elixir-extensions/spritesmith');
 require('./elixir-extensions/svg-sprite');
-require('./elixir-extensions/modernizr');
 
 // Add IE9 support to autoprefixer.
 config.css.autoprefix.options = [{
