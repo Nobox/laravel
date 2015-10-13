@@ -55,7 +55,7 @@ class AnalyticsHelper {
                 category = $this.data('ga-category'),
                 action = $this.data('ga-action'),
                 label = $this.data('ga-label'),
-                value = $This.data('ga-value')
+                value = $this.data('ga-value')
             ;
 
             this.sendEvent('send', 'event', category, action || 'hover', label, value);
