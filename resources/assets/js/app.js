@@ -31,11 +31,10 @@ app.methods.example = function () {
 
 /**
  * App components.
- * Each view uses a component?
  * @type {Object}
  */
 app.components = {
-
+    example: require('./components/example')
 }
 
 /**
