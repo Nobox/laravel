@@ -28,7 +28,7 @@
 </head>
 
 @section('body-open')
-<body>
+<body data-route="{{ Route::currentRouteName() }}" data-base="{{ url() }}">
 @show
 
     @yield('body-content')
