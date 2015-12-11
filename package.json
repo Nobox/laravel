@@ -11,7 +11,8 @@
   "dependencies": {
     "fastclick": "^1.0.6",
     "svg4everybody": "^2.0.0",
-    "vue": "^0.12.16"
+    "vue": "^0.12.16",
+    "vue-resource": "^0.1.17"
   },
   "devDependencies": {
     "browserify": "^10.0.0",
