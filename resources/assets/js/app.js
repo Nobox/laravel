@@ -1,50 +1,52 @@
-import Vue from 'vue';
 import $ from 'jquery';
-import Entry from './entry';
+import Vue from 'vue';
+import VueResource from 'vue-resource';
+import './components/';
 
-// Initialize basic settings
-var entry = new Entry();
-entry.init();
+class App {
 
-/**
- * Main Vue app.
- * @type {Object}
- */
-var app = {
-    el : 'body',
-    methods: {}
-};
+    /**
+     * Set app views and properties.
+     * @return {null}
+     */
+    constructor() {
+        this.currentRoute = $('body').data('route');
+        this.csrfToken = $('meta[name="csrf"]').attr('content');
+    }
 
-/**
- * Global app data.
- * @type {Object}
- */
-app.data = {}
+    /**
+     * Initialize app
+     * @return {void}
+     */
+    init() {
+        // add any polyfills, bindings etc etc.
 
-/**
- * Global app methods.
- * @return {null}
- */
-app.methods.example = function () {
+        this.views();
+        this.loadView(this.currentRoute);
+    }
 
-}
+    /**
+     * Register app views.
+     * @return {null}
+     */
+    views() {
+        this.views = {
+            'index': require('./views/index')
+        };
+    }
 
-/**
- * App components.
- * @type {Object}
- */
-app.components = {
-    example: require('./components/example')
-}
-
-/**
- * Global app filters
- * @type {Object}
- */
-app.filters = {
-    example: function (value) {
-        return value + ' example';
+    /**
+     * Load route vue instance.
+     * @return {void}
+     */
+    loadView() {
+        if (this.views[this.currentRoute]) {
+            Vue.use(VueResource);
+            Vue.http.options.root = $('body').data('base');
+            Vue.http.headers.common['X-CSRF-TOKEN'] = this.csrfToken;
+            new Vue(this.views[this.currentRoute]);
+        }
     }
 }
 
-new Vue(app);
+export default App;

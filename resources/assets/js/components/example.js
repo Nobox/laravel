@@ -1,17 +1,27 @@
+import Vue from 'vue';
+
 /**
  * Simple example component.
  * @type {Object}
  */
 var example = {
-    template: '<p>This is an example</p>'
+    template: '<p>Example</p>'
 };
 
 /**
- * Component data
+ * Component data.
  * @return {Object}
  */
 example.data = function () {
     return {};
 }
 
-export default example;
+/**
+ * Once the component is inserted on the dom.
+ * @return {null}
+ */
+example.ready = function () {
+
+}
+
+Vue.component('example', example);

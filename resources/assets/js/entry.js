@@ -2,6 +2,7 @@ import $ from 'jquery';
 import attachFastClick from 'fastclick';
 import svg4everybody from 'svg4everybody';
 import loadJS from './lib/loadJS';
+import App from './app';
 
 // Disable touch events 300ms delay
 attachFastClick(document.body);
@@ -27,3 +28,7 @@ if (! Modernizr.placeholder) {
 if (! Modernizr.srcset || ! Modernizr.sizes) {
     loadJS('bower_components/picturefill/dist/picturefill.min.js');
 }
+
+// Initialize app
+var app = new App();
+app.init();
