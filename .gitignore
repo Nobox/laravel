@@ -4,6 +4,7 @@
 # Laravel
 /vendor
 /node_modules
+/public/storage
 Homestead.yaml
 .vagrant
 .env
